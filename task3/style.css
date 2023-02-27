@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#container {
+    margin: 0;
+    min-height: 150px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.part {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.header {
+    flex: 1;
+    background-color: bisque;
+}
+.content {
+    flex: 3;
+}
+.footer {
+    flex: 1;
+    background-color: lightgreen;
+}
+.image {
+    height: 500px;
+    width: 500px;
+    background-size: contain;
+    background-image: url("img/telephone.jpg");
+}

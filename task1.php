@@ -10,12 +10,16 @@
 
 $number = 1;
 $stringLength = 1;
+$endNum = 100;
 
 do {
     for ($i = 1; $i <= $stringLength; $i++) {
         echo $number . ' ';
         $number++;
+        if ($number > $endNum) {
+            break;
+        }
     }
     echo PHP_EOL;
     $stringLength++;
-} while ($number <= 100);
+} while ($number <= $endNum);

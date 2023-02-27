@@ -11,12 +11,19 @@ $columns = 7;
 $arr = [];
 $rowsSums = array_fill(0, $rows, 0);
 $columnsSums = array_fill(0, $columns, 0);
+$allValues = [];
 for ($i = 0; $i < $rows; $i++) {
     $arr[$i] = [];
     for ($j = 0; $j < $columns; $j++) {
-        $arr[$i][$j] = mt_rand(0, 1000);
-        $rowsSums[$i] += $arr[$i][$j];
-        $columnsSums[$j] += $arr[$i][$j];
+        do {
+            $notUnique = true;
+            $newValue = mt_rand(0, 1000);
+            $notUnique = in_array($newValue, $allValues);
+        } while ($notUnique);
+        $arr[$i][$j] = $newValue;
+        $allValues[] = $newValue;
+        $rowsSums[$i] += $newValue;
+        $columnsSums[$j] += $newValue;
     }
 }
 
